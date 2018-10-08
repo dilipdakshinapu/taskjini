@@ -26,6 +26,7 @@ export APP_SETTINGS = development
 export SECRET = aslkjlajs9w390820raijslkjalsjf
 
 Run migrations to create the schema
+-----------------------------------
 
 $ python manage.py db init
 
@@ -34,6 +35,7 @@ $ python manage.py db migrate
 $ python manage.py db upgrade
 
 Run the application
+--------------------
 
 python run.py
 
