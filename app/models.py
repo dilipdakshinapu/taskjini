@@ -1,7 +1,6 @@
 # app/models.py
 
 import enum
-
 from app import db
 
 class Priorities(enum.Enum):
@@ -44,9 +43,3 @@ class TaskList(db.Model):
     def save(self):
         db.session.add(self)
         db.session.commit()
-
-    def __repr__(self):
-        """
-        Represent the object as string
-        """
-        return self.title

@@ -18,6 +18,7 @@ def create_app(config_name):
     """
     app = Flask(__name__)
     app.config.from_object(app_config[config_name])
+    app.config.from_pyfile("../instance/config.py")
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     api = Api(app)
 
@@ -26,8 +27,8 @@ def create_app(config_name):
     
     # Declare the endpoints
     from app.views import Task, TasksList
-    api.add_resource(Task, '/task')
-    api.add_resource(TasksList, '/tasks')
+    api.add_resource(Task, '/task/<int:task_id>')
+    api.add_resource(TasksList, '/tasks', '/tasks/<priority>')
 
     return app
 
