@@ -4,5 +4,6 @@ __pycache__/
 sqlite.db*
 *.db
 migrations	
+instance/settings.py
 
 .env
