@@ -17,7 +17,6 @@ class TaskListTestCase(unittest.TestCase):
         initialize the app
         """
         self.app = create_app(config_name="testing")
-        print(self.app.config["SQLALCHEMY_DATABASE_URI"])
         self.client = self.app.test_client
         self.tasklist = {"title": "sample task", "description": "test task", "priority": "high", "status": 0}
 
